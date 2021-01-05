@@ -1,9 +1,9 @@
 {
   "targets": {
-    "kanbanfire-b91c5": {
+    "kanbanfire-388ec": {
       "hosting": {
         "kanban-fire": [
-          "kanbanfire-b91c5"
+          "kanbanfire-388ec"
         ]
       }
     }

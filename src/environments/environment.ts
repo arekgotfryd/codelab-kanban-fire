@@ -20,15 +20,15 @@
 
 export const environment = {
   production: false,
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   firebase: {
-    apiKey: 'AIzaSyACR3OxVnse4KftDoKrZkfO0P00-ligW0c',
-    authDomain: 'kanban-fire-workshop.firebaseapp.com',
-    databaseURL: 'https://kanban-fire-workshop.firebaseio.com',
-    projectId: 'kanban-fire-workshop',
-    storageBucket: 'kanban-fire-workshop.appspot.com',
-    messagingSenderId: '513024923782',
-    appId: '1:513024923782:web:ef27622969067c9e565907',
-    measurementId: 'G-1GXZ633QPQ',
+    apiKey: '',
+    authDomain: '',
+    projectId: '',
+    storageBucket: '',
+    messagingSenderId: '',
+    appId: '',
+    measurementId: '',
   },
 };
 
