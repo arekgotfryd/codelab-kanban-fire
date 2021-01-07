@@ -22,13 +22,13 @@ export const environment = {
   production: false,
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   firebase: {
-    apiKey: '',
-    authDomain: '',
-    projectId: '',
-    storageBucket: '',
-    messagingSenderId: '',
-    appId: '',
-    measurementId: '',
+    apiKey: "AIzaSyCNT6gIXspk6CIDu783m5E8ysuw_mQLe3g",
+    authDomain: "kanbanfire-388ec.firebaseapp.com",
+    projectId: "kanbanfire-388ec",
+    storageBucket: "kanbanfire-388ec.appspot.com",
+    messagingSenderId: "584921199218",
+    appId: "1:584921199218:web:f83a6ae9c0ad7f921008eb",
+    measurementId: "G-S0DEDPEBHV"
   },
 };
 
