@@ -16,7 +16,7 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router'
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -36,14 +36,36 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { KanbanBoardComponent } from './kanban-board/kanban-board.component';
 
+//guards
+import {
+  AngularFireAuthGuard,
+  hasCustomClaim,
+  redirectUnauthorizedTo,
+  redirectLoggedInTo,
+} from '@angular/fire/auth-guard';
+
+//pipes
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+
 const routes: Routes = [
-  { path: 'home', component: KanbanBoardComponent },
+  {
+    path: 'home',
+    component: KanbanBoardComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
+  },
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-]
+];
 
 @NgModule({
-  declarations: [AppComponent, TaskComponent, TaskDialogComponent, LoginComponent, KanbanBoardComponent],
+  declarations: [
+    AppComponent,
+    TaskComponent,
+    TaskDialogComponent,
+    LoginComponent,
+    KanbanBoardComponent,
+  ],
   imports: [
     BrowserModule,
     MatToolbarModule,
@@ -57,7 +79,7 @@ const routes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent],
